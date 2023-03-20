@@ -20,7 +20,7 @@ const GifsPage = ({ gf }) => {
       <SearchHeader placeHolder={"Search any Gif"} />
       <div className="container mx-auto">
         <Catagories setCat={setCat} />
-        <div className="grid gap-6 grid-cols-3 mt-6">
+        <div className="grid gap-6 grid-cols-[repeat(auto-fit,minmax(300px,1fr))] mt-6">
           {data &&
             data.map((gif) => (
               <img
