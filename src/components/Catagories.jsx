@@ -6,7 +6,7 @@ const Catagories = ({ setCat }) => {
     setCat(e.target.innerText);
   }
   return (
-    <section className="flex items-center space-x-4 text-white text-lg cursor-pointer overflow-auto cats">
+    <section className="flex items-center space-x-4 text-white text-lg cursor-pointer overflow-auto cats pb-4">
       {catagories.map((category) => (
         <div
           onClick={(e) => catHandler(e)}

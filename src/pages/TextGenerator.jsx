@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Loading, SearchHeader } from "../components";
+import { Loading, SearchHeader, Transition } from "../components";
 const TextGenerator = ({ gf }) => {
   const [searchValue, setSearchValue] = useState("");
   const [results, setResults] = useState([]);
@@ -12,6 +12,7 @@ const TextGenerator = ({ gf }) => {
 
   return (
     <>
+      <Transition />
       <SearchHeader setSearchValue={setSearchValue} />
       <div className=" container mx-auto flex items-center flex-wrap justify-center  min-h-screen">
         {results &&

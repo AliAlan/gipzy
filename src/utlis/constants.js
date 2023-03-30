@@ -7,6 +7,7 @@ const catagories = [
   "Basketball",
   "Movies",
   "Simpsons",
+  "Starwars",
   "Family Guy",
   "Music",
   "Oscars",
