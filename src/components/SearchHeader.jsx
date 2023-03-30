@@ -1,15 +1,19 @@
 import { useState } from "react";
 import { BsArrowRight } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
-const SearchHeader = ({ setSearchValue, placeHolder }) => {
+const SearchHeader = ({ setSearchValue, placeHolder, setIsClicked }) => {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate(`/searchResults/${input}`);
+    placeHolder && navigate(`/searchResults/${input}`);
     setSearchValue(input);
   };
-
+  const randomHandler = () => {
+    setIsClicked(true);
+    navigate("/randomPage");
+    setIsClicked(false);
+  };
   return (
     <header className=" mb-8 flex-col sm:flex-row flex items-center bg-violet-900 pb-6 justify-center sm:space-x-6 px-4">
       <h1 className="text-white sm:text-lg md:text-xl mb-3 sm:m-0">
@@ -33,9 +37,14 @@ const SearchHeader = ({ setSearchValue, placeHolder }) => {
           <BsArrowRight size={24} />
         </button>
       </form>
-      <button className="bg-white h-12 px-3 font-medium border-none outline-none hover:bg-slate-100">
-        I'm a random button
-      </button>
+      {placeHolder && (
+        <button
+          onClick={randomHandler}
+          className="bg-white h-12 px-3 font-medium border-none outline-none hover:bg-slate-100 mt-4 sm:mt-0"
+        >
+          I'm a random button
+        </button>
+      )}
     </header>
   );
 };

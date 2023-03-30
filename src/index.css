@@ -46,3 +46,13 @@ body::-webkit-scrollbar-thumb {
 .cats {
   scroll-behavior: smooth;
 }
+.no-clip {
+  clip-path: circle(0% at 100% 50%);
+  display: none;
+  transition: 0.6s ease;
+}
+.clip {
+  clip-path: circle(200% at 100% 50%);
+  display: flex;
+  transition: 0.6s ease;
+}
