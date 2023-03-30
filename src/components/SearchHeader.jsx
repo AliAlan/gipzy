@@ -20,7 +20,7 @@ const SearchHeader = ({ setSearchValue, placeHolder, setIsClicked }) => {
       </h1>
       <form
         onSubmit={submitHandler}
-        className=" w-80 sm:w-96 flex items-center h-12 "
+        className=" w-80 sm:w-96 flex items-center h-12 rounded-none"
       >
         <input
           placeholder={placeHolder || "Enter text"}
