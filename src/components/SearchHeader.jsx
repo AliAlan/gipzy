@@ -10,9 +10,8 @@ const SearchHeader = ({ setSearchValue, placeHolder, setIsClicked }) => {
     setSearchValue(input);
   };
   const randomHandler = () => {
-    setIsClicked(true);
     navigate("/randomPage");
-    setIsClicked(false);
+    setIsClicked((prev) => !prev);
   };
   return (
     <header className=" mb-8 flex-col sm:flex-row flex items-center bg-violet-900 pb-6 justify-center sm:space-x-6 px-4">

@@ -14,18 +14,21 @@ const MobilSidebar = () => {
           <img className="object-cover w-8 " src="./favicon.png" alt="logo" />
         </Link>
       </div>
-      <div onClick={menuHandler} className={open ? "block" : "hidden"}>
+      <div
+        onClick={menuHandler}
+        className={!open ? "block cursor-pointer " : "hidden"}
+      >
         <HiOutlineMenuAlt3 className="h-8 w-8" />
       </div>
       <div
         className={
           !open
-            ? "h-screen  clip flex-col items-center fixed z-10 right-0 top-0 bg-violet-600  text-white  w-[50vw] clip"
-            : " no-clip"
+            ? " no-clip hidden"
+            : "h-screen  clip flex-col items-center fixed z-10 right-0 top-0 bg-violet-600  text-white  w-[50vw] clip"
         }
       >
         <AiOutlineClose
-          className="h-8 w-8 top-6 right-4 absolute"
+          className="h-8 w-8 top-6 right-4 absolute cursor-pointer"
           onClick={menuHandler}
         />
 

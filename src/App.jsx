@@ -11,7 +11,7 @@ import { GiphyFetch } from "@giphy/js-fetch-api";
 import RandomPage from "./pages/RandomPage";
 
 function App() {
-  const gf = new GiphyFetch("v14cFe65D6DQnCW2uY7ZcFPTKLdgMLkp");
+  const gf = new GiphyFetch(import.meta.env.VITE_API_KEY);
 
   return (
     <div className="  bg-slate-900">

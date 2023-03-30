@@ -7,7 +7,9 @@ const GifsPage = ({ gf }) => {
   const [data, setData] = useState([]);
   async function fetchGifs() {
     await fetch(
-      `https://api.giphy.com/v1/gifs/search?api_key=v14cFe65D6DQnCW2uY7ZcFPTKLdgMLkp&q=${cat}&offset=0&rating=g&lang=en`
+      `https://api.giphy.com/v1/gifs/search?api_key=${
+        import.meta.env.VITE_API_KEY
+      }&q=${cat}&offset=0&rating=g&lang=en`
     )
       .then((res) => res.json())
       .then((data) => setData(data.data));
@@ -15,7 +17,6 @@ const GifsPage = ({ gf }) => {
   useEffect(() => {
     fetchGifs();
   }, [cat]);
-
   return (
     <div className="min-h-screen pb-8">
       <Transition />
@@ -37,6 +38,7 @@ const GifsPage = ({ gf }) => {
               {data &&
                 data?.map((gif) => (
                   <video
+                    key={gif.id}
                     className="rounded-lg  w-full h-full object-cover"
                     src={gif.images.original.mp4}
                     alt="gif"

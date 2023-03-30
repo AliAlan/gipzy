@@ -17,7 +17,7 @@ const TextGenerator = ({ gf }) => {
       <div className=" container mx-auto flex items-center flex-wrap justify-center  min-h-screen">
         {results &&
           results.map((result) => (
-            <a target="_blank" download href={result.url}>
+            <a key={result.id} target="_blank" download href={result.url}>
               <img src={result.url} alt={result.title} />
             </a>
           ))}
