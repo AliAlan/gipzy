@@ -8,7 +8,7 @@ const MobilSidebar = () => {
     setOpen((prevState) => !prevState);
   };
   return (
-    <nav className="  h-20 flex justify-between items-center w-full bg-violet-900 px-4  sm:hidden">
+    <nav className="  h-20 flex justify-between items-center w-full bg-violet-900 px-4  sm:hidden sticky top-0 left-0  z-10">
       <div className="logo">
         <Link to="/">
           <img className="object-cover w-8 " src="./favicon.png" alt="logo" />

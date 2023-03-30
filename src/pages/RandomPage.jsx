@@ -17,7 +17,7 @@ const RandomPage = () => {
   useEffect(() => {
     fetchGifs();
   }, [isClicked]);
-  console.log(data);
+
   return (
     <div className="min-h-screen pb-8">
       <Transition />
